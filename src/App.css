@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('./assets/images/austria.jpg') no-repeat center center fixed;
+    background-size: cover; /* Cover the entire background */
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 10px 20px; /* Reduced padding */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between title and nav */
+    align-items: center; /* Center items vertically */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    display: flex; /* Keep navigation links in a row */
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    position: relative;
+    margin: 0 10px; /* Adjust margin for spacing */
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff6347; /* Change color on hover */
+}
+
+/* Remove the underline effect */
+nav a::after {
+    display: none; /* Remove the underline */
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}
+
+section {
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-in;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background 0.3s ease;
+}
+
+li:hover {
+    background: #f0f0f0; /* Highlight on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        margin: 10px;
+    }
+}
+
+.project-card {
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transition: background 0.4s ease, transform 0.3s ease;
+    background: hsla(0, 0%, 100%, 0.733);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Example for Projects Section */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Responsive Grid for Projects */
+@media (min-width: 600px) {
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links.open {
+    display: flex; /* Show links when open */
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .hamburger {
+        display: none; /* Show hamburger icon on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        right: 0;
+        background: #333;
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        display: flex; /* Show links when open */
+    }
+
+    nav {
+        flex-direction: column; /* Stack links vertically on mobile */
+        align-items: center; /* Center items */
+    }
+
+    nav a {
+        margin: 10px 0; /* Adjust margin for vertical spacing */
+    }
+}
+
+#cubeIcon {
+    width: 24px;
+    height: 24px;
+    vertical-align: -4px;
+    margin-right: 4px;
+}
+
+section:hover #cubeIcon {
+    animation: rotate 0.5s linear forwards;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg); /* Rotate to 90 degrees */
+    }
+}
+
+
