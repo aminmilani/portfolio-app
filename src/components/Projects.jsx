@@ -18,10 +18,10 @@ function Projects() {
             title: 'Project 4: Weather App',
             description: 'A weather forecasting application that provides real-time weather updates using a public API.',
         },
-        {
-            title: 'test',
-            description: 'test',
-        },
+        // {
+        //     title: 'test',
+        //     description: 'test',
+        // },
     ];
 
     return (

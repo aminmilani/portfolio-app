@@ -24,6 +24,11 @@ body, html {
     text-align: center;
     backdrop-filter: blur(10px); /* Blur effect */
     z-index: 9999; /* Ensure it covers everything */
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+.preloader.fade-out {
+    opacity: 0; /* Fade out to transparent */
 }
 
 .preloader h1 {
@@ -35,4 +40,37 @@ body, html {
 
 .content {
     display: block; /* Show content */
+}
+
+.loading-dots {
+    display: flex; /* Use flexbox to align dots side by side */
+    align-items: last baseline; /* Center align dots vertically */
+}
+
+.dot {
+    height: 1rem; /* Size of the dot */
+    width: 1rem; /* Size of the dot */
+    margin: 0 0.1rem; /* Space between dots */
+    border-radius: 50%; /* Make it circular */
+    background-color: white; /* Dot color */
+    animation: move 0.6s infinite alternate; /* Animation for horizontal movement */
+}
+
+/* Animation for the dots */
+@keyframes move {
+    0% {
+        transform: translateY(1rem); /* Original position */
+    }
+    100% {
+        transform: translateY(1.5rem); /* Move to the right */
+    }
+}
+
+/* Add delay for each dot */
+.dot:nth-child(2) {
+    animation-delay: 0.2s; /* Delay for the second dot */
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s; /* Delay for the third dot */
 }
