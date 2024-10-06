@@ -13,14 +13,18 @@ const Preloader = () => {
     }, []);
 
     return (
-        <div className={`preloader ${!loading ? 'fade-out' : ''}`}>
-            <h1>Everything is a LIE</h1>
-            <div className="loading-dots">
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-            </div>
-        </div>
+        <>
+            {loading && (
+                <div className={`preloader ${!loading ? 'fade-out' : ''}`}>
+                    <h1>Everything is a LIE</h1>
+                    <div className="loading-dots">
+                        <div className="dot"></div>
+                        <div className="dot"></div>
+                        <div className="dot"></div>
+                    </div>
+                </div>
+            )}
+        </>
     );
 };
 
